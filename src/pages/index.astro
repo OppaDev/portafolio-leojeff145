@@ -1,13 +1,85 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Hola, soy LeoÐaVinci <Badge>Disponible para trabajar</Badge></h1>
-		<h2>Desarrollador Web y estudiante de Ingenieria en Software. </h2>
-	</main>
-</Layout>
+<Layout
+  title="Portafolio | Leonardo - Desarrolador Web"
+  description="Contacta a Leonardo Obando, estudiante de Ingenieria en Software en la Universidad de las Fuerzas Armadas ESPE."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full w-12 h-12 mb-4"
+        src="https://i.ibb.co/71pvxF3/photo-3.jpg"
+        alt="leo photo"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hola, soy Leonardo <a
+          href="https://www.linkedin.com/in/leonardo-obando-13a062112/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span class="text-yellow-200/90"
+          >Estudiante de Ingenieria en Software en la Universidad de las Fuerzas
+          Armadas ESPE.</span
+        >
+        <span class="opacity-75">Cursando 5to semestre de la carrera.</span>
+        <span class="text-red-200/90">Soy del Carchi, Ecuador.</span>
+        <span class="opacity-75"
+          >Dispuesto a aprender cosas nuevas y dar soluciones inovadoras.</span
+        >
+      </h2>
 
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/leonardo-obando-13a062112/"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+
+        <SocialPill href="https://github.com/leojeff145">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+
+        <SocialPill href="mailto:jlobando2@espe.edu.ec">
+          <MailIcon class="size-4 md:size-6" />
+          jlobando2@espe.edu.ec
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia Laboral
+      </h2>
+      
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
